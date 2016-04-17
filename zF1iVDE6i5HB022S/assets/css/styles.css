@@ -30,59 +30,54 @@ body {
 
 /* BinaryChooser */
 
-.btn, .btn:hover {
-    display: block;
-    font-size: 10vh;
-    line-height: 12vh;
-    font-weight: normal;
-    padding: 2vw;
-    height: 50vh;
-    min-height: 150px;
-    vertical-align: middle;
+.btn {
+    display: table;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    font-size: 4vh;
+    line-height: 5vh;
     text-align: center;
-    color: #fff;
 }
 
-.btn-exp, .btn-exp:hover {
-    display: block;
-    font-size: 128px;
-    font-weight: normal;
-    height: 50vh;
-    min-height: 150px;
-    text-align: center;
+.btn .cell {
+    display: table-cell;
     vertical-align: middle;
+    padding: 4vh;
+    opacity: 0.95;
+}
+
+.btn .cell:hover {
+    opacity: 1.0;
+}
+
+.ptr {
+    cursor: pointer;
 }
 
 .bg1 {
-    background-color: rgba(250, 90, 0, 0.8);
-}
-
-.bg1:hover {
-    background-color: rgba(250, 90, 0, 1.0);
+    background-color: #00a0b0;
+    color: #fff;
 }
 
 .bg2 {
-    background-color: rgba(0, 170, 212, 0.8);
-}
-
-.bg2:hover {
-    background-color: rgba(0, 170, 212, 1.0);
+    background-color: #6a4a3c;
+    color: #fff;
 }
 
 .bg3 {
-    background-color: rgba(248, 202, 0, 0.8);
-}
-
-.bg3:hover {
-    background-color: rgba(248, 202, 0, 1.0);
+    background-color: #cc333f;
+    color: #fff;
 }
 
 .bg4 {
-    background-color: rgba(138, 155, 15, 0.8);
+    background-color: #edc951;
+    color: #fff;
 }
 
-.bg4:hover {
-    background-color: rgba(138, 155, 15, 1.0);
+.b3 {
+    border: 2px solid #cc333f;
+    color: #000;
 }
 
 .mt20 {
