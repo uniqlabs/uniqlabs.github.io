@@ -1,0 +1,275 @@
+/** Fonts **/
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700')
+@import url('https://fonts.googleapis.com/css?family=Raleway')
+
+/** Size Defs **/
+$textFont: 'Raleway', sans-serif
+$headingFont: 'Arimo', sans-serif
+
+/** Color Defs **/
+$white: #fff
+$lightWhite: #f9f9f9
+$silver: #aaa
+$gray: #808080
+$darkGray: #333
+$dark: #1a1a1a
+$black: #000
+$pink: #f34444
+$blue: #00aad4
+$blue-s: #0099bf
+$teal: #37c8ab
+$teal-s: #32b49a
+
+/* General */
+*
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+a
+  text-decoration: none
+
+a:hover
+  text-decoration: none
+
+img
+  text-decoration: none
+  border: none
+
+html, body
+  height: 100%
+  font-family: $textFont
+  font-size: 16px
+  color: $dark
+  margin: 0
+  padding: 0
+
+body
+  position: relative
+
+h1, h2, h3, h4
+  font-family: $headingFont
+
+h1
+  font-size: 44px
+
+h2
+  font-size: 36px
+
+p
+  font-size: 18px
+
+p.disclaimer
+  color: $silver
+  font-size: 14px
+
+/** Sizes **/
+i.huge
+  font-size: 72px
+
+/** Colors **/
+.pink
+  color: $pink
+
+.bg-blue
+  background: $blue
+
+.bg-teal
+  background: $teal
+
+@media (max-width: 991px)
+  .bg-md-blue-teal
+    background: $blue
+
+@media (min-width: 992px)
+  .bg-md-blue-teal
+    background: $teal
+
+@media (max-width: 991px)
+  .bg-md-teal-blue
+    background: $teal
+
+@media (min-width: 992px)
+  .bg-md-teal-blue
+    background: $blue
+
+/** Soft Breaks **/
+@media (min-width: 992px)
+  .lg-sbr
+    display: block
+
+/** Flexbox **/
+.hbox
+  display: flex
+
+.vbox
+  display: flex
+  flex-direction: column
+
+.flex-fill
+  flex: 1
+
+.flex-center
+  align-items: center
+
+.flex-center-both
+  align-items: center
+  justify-content: center
+
+/** Margins and Padding **/
+.mt20
+  margin-top: 20px
+
+.mb10
+  margin-bottom: 10px
+
+.pt20
+  padding-top: 20px
+
+.pb20
+  padding-bottom: 20px
+
+.p4
+  padding: 4px
+
+@media (min-width: 992px)
+  .lg-pdr5
+    padding-right: 5px
+
+@media (min-width: 992px)
+  .lg-pdr10
+    padding-right: 10px
+
+@media (min-width: 992px)
+  .lg-pdl5
+    padding-left: 5px
+
+@media (min-width: 992px)
+  .lg-pdl10
+    padding-left: 10px
+
+.btn
+  font-family: $headingFont
+  font-weight: 700
+  text-transform: uppercase
+
+/** Navbar **/
+.navbar
+  height: 96px
+  background: transparent url('../img/navbar_bg.png') repeat-x 0 0
+  border: none
+  a.navbar-brand
+    padding-top: 4px
+
+/** Cover **/
+#cover
+  height: 100vh
+  width: 100%
+  background: url('../img/uniq_cover_01.jpg') center center
+  background-size: cover
+  .claim
+    margin-top: 70vh
+    color: $white
+    font-weight: 400
+
+@media (max-width: 525px)
+  #cover .claim
+    font-size: 36px
+
+@media (max-width: 431px)
+  #cover .claim
+    font-size: 32px
+
+@media (min-width: 576px)
+  #cover .claim
+    font-size: 48px
+
+@media (min-width: 1200px)
+  #cover .claim
+    font-size: 54px
+
+.arrow
+  display: none
+  position: fixed
+  bottom: 0
+  left: 50%
+  margin-left: -27px
+  margin-bottom: 20px
+  width: 54px
+  height: 30px
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDcyIDQwIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgZD0iTSA2Ny4yNzY3Nyw0LjM4MDMxMTEgMzYsMzUuNjU3MDcxIDQuNzIzMjMsNC4zODAzMTExIi8+PC9zdmc+DQo=)
+  background-size: contain
+
+.bounce
+  -webkit-animation: bounce 2.5s infinite
+  animation: bounce 2.5s infinite
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    -webkit-transform: translateY(0)
+    -moz-transform: translateY(0)
+    -ms-transform: translateY(0)
+    -o-transform: translateY(0)
+    transform: translateY(0)
+  40%
+    -webkit-transform: translateY(-8px)
+    -moz-transform: translateY(-8px)
+    -ms-transform: translateY(-8px)
+    -o-transform: translateY(-8px)
+    transform: translateY(-8px)
+  60%
+    -webkit-transform: translateY(-4px)
+    -moz-transform: translateY(-4px)
+    -ms-transform: translateY(-4px)
+    -o-transform: translateY(-4px)
+    transform: translateY(-4px)
+
+#what
+  background: $lightWhite
+
+#steps
+  p
+    font-size: 16px
+  .step
+    padding: 10px
+  .btn-prev, .btn-next
+    margin: 0
+    cursor: pointer
+    opacity: 0.5
+  .btn-prev:hover, .btn-next:hover
+    opacity: 1.0
+  .btn-prev
+    background: url('../img/arrow-left-gray.svg') 10px center no-repeat
+  .btn-next
+    margin-left: -5px
+    background: url('../img/arrow-right-gray.svg') right 10px center no-repeat
+  .slick-dots
+    margin: 0 -15px
+
+#features
+  background: $lightWhite
+  h3
+    font-family: $headingFont
+    font-size: 34px
+    font-weight: 700
+  p
+    font-size: 16px
+  .card
+    color: $white
+    height: 100%
+    .front, .back
+      padding: 20px 30px
+
+#footer
+  background: $darkGray
+  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.3)
+  color: $gray
+  h4, a
+    color: $gray
+    font-size: 14px
+    display: inline-block
+  a:hover
+    color: $silver
