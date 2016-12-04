@@ -7,7 +7,7 @@ $(document).ready(function () {
         stopAnimation();
     else
         a.delay(2500).fadeIn(1000);
-    if (st > 300)
+    if (st > 200)
         nb.hide();
     else
         nb.show();
@@ -18,7 +18,7 @@ $(document).ready(function () {
             stopAnimation();
         else
             a.show();
-        if (st > 300)
+        if (st > 200)
             nb.fadeOut();
         else
             nb.fadeIn();
