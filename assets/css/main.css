@@ -182,11 +182,12 @@ i.huge {
     color: #fff;
     font-weight: 400;
     margin-bottom: 80px;
-    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
 
 .arrow {
   display: none;
   position: fixed;
+  cursor: pointer;
   bottom: 0;
   left: 50%;
   margin-left: -27px;

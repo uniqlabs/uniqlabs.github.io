@@ -24,6 +24,8 @@ $(document).ready(function () {
             nb.fadeIn();
     });
 
+    $('#arrow').on('click', scrollToElement.bind(null, $('#what')));
+
     $('.slides').slick({
         infinite: true,
         dots: true,
@@ -73,6 +75,10 @@ $(document).ready(function () {
         e.preventDefault();
         signUp(firstName, email)
     });
+
+    function scrollToElement(el) {
+        $('html,body').animate({scrollTop: el.offset().top}, 400);
+    }
 
     function stopAnimation() {
         a.stop();
