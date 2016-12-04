@@ -17,7 +17,6 @@ $black: #000
 $pink: #f34444
 $red: #d9534f
 $blue: #00aad4
-$blue-s: #0099bf
 $teal: #37c8ab
 $green: #5cb85c
 
@@ -87,14 +86,14 @@ i.huge
 .green
   color: $green
 
+.bg-teal
+  background: $teal
+
 .bg-1
   background: $c1
 
 .bg-2
   background: $c2
-
-.bg-teal
-  background: $teal
 
 @media (max-width: 991px)
   .bg-md-1-2
@@ -115,6 +114,10 @@ i.huge
 /** Responsive Switches **/
 @media (min-width: 576px)
   .xs-only
+    display: none
+
+@media (min-width: 768px)
+  .sm-only
     display: none
 
 /** Soft Breaks **/
@@ -140,9 +143,15 @@ i.huge
 .flex-center
   align-items: center
 
-.flex-center-both
+.flex-center-center
   align-items: center
   justify-content: center
+
+.flex-start
+  align-self: flex-start
+
+.flex-end
+  align-self: flex-end
 
 /** Margins and Padding **/
 .mt10
@@ -202,25 +211,10 @@ i.huge
   background: url('../img/uniq_cover_01.jpg') center center
   background-size: cover
   .claim
-    margin-top: 70vh
     color: $white
     font-weight: 400
-
-@media (max-width: 525px)
-  #cover .claim
-    font-size: 36px
-
-@media (max-width: 431px)
-  #cover .claim
-    font-size: 32px
-
-@media (min-width: 576px)
-  #cover .claim
-    font-size: 48px
-
-@media (min-width: 1200px)
-  #cover .claim
-    font-size: 54px
+    margin-bottom: 80px
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3)
 
 .arrow
   display: none
