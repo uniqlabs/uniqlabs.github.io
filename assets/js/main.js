@@ -24,7 +24,10 @@ $(document).ready(function () {
             nb.fadeIn();
     });
 
-    $('#arrow').on('click', scrollToElement.bind(null, $('#what')));
+    $('#arrow').click(function (e) {
+        e.preventDefault();
+        scrollToElement($('#what'));
+    });
 
     $('.slides').slick({
         infinite: true,
