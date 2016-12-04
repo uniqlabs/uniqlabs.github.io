@@ -14,9 +14,12 @@ $gray: #808080
 $darkGray: #333
 $dark: #1a1a1a
 $black: #000
+$beige: #e2d3c8
 $pink: #f34444
 $red: #d9534f
-$blue: #00aad4
+$lightBlue: #00c6ec
+$aqua: #00ccff
+$blue: #007dff
 $teal: #37c8ab
 $green: #5cb85c
 
@@ -69,6 +72,15 @@ p.disclaimer
   color: $silver
   font-size: 14px
 
+.btn
+  font-family: $headingFont
+  font-weight: 700
+  text-transform: uppercase
+
+span.rv
+  unicode-bidi: bidi-override
+  direction: rtl
+
 /** Sizes **/
 i.medium
   font-size: 32px
@@ -85,6 +97,10 @@ i.huge
 
 .green
   color: $green
+
+.bg-light-white
+  color: $darkGray
+  background: $lightWhite
 
 .bg-teal
   background: $teal
@@ -160,6 +176,9 @@ i.huge
 .mt20
   margin-top: 20px
 
+.mr10
+  margin-right: 10px
+
 .mb10
   margin-bottom: 10px
 
@@ -191,18 +210,16 @@ i.huge
   .lg-pdl10
     padding-left: 10px
 
-.btn
-  font-family: $headingFont
-  font-weight: 700
-  text-transform: uppercase
-
 /** Navbar **/
 .navbar
-  height: 96px
-  background: transparent url('../img/navbar_bg.png') repeat-x 0 0
+  background: transparent
   border: none
   a.navbar-brand
     padding-top: 4px
+
+.navbar.main
+  height: 96px
+  background: transparent url('../img/navbar_bg.png') repeat-x 0 0
 
 /** Cover **/
 #cover
@@ -213,7 +230,7 @@ i.huge
   .claim
     color: $white
     font-weight: 400
-    margin-bottom: 80px
+    margin-bottom: 88px
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3)
 
 .arrow
@@ -222,7 +239,7 @@ i.huge
   bottom: 0
   left: 50%
   margin-left: -27px
-  margin-bottom: 20px
+  margin-bottom: 24px
   width: 54px
   height: 30px
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDcyIDQwIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgZD0iTSA2Ny4yNzY3Nyw0LjM4MDMxMTEgMzYsMzUuNjU3MDcxIDQuNzIzMjMsNC4zODAzMTExIi8+PC9zdmc+DQo=)
@@ -262,6 +279,56 @@ i.huge
   padding-left: 5px
   font-size: 12px
 
+#testimonials
+  background: $beige url('../img/uniq_bg_tile.png') repeat
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1)
+
+.avatar
+  border: 1px solid rgba(127, 127, 127, 0.1)
+
+.bubble
+  position: relative
+  background: $white
+  padding: 0 30px 10px 30px
+  margin-bottom: 20px
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2)
+  h2
+    padding-top: 10px
+    color: $aqua
+
+@media (max-width: 991px)
+  .bubble
+    margin-top: 30px
+  .bubble:after
+    content: ''
+    position: absolute
+    border-style: solid
+    border-width: 0 20px 20px 20px
+    border-color: $white transparent
+    display: block
+    height: 0
+    z-index: 1
+    top: -15px
+    left: calc(50% - 20px)
+
+@media (max-width: 768px)
+  .bubble
+    margin-left: 15px
+    margin-right: 15px
+
+@media (min-width: 992px)
+  .bubble:after
+    content: ''
+    position: absolute
+    border-style: solid
+    border-width: 20px 20px 20px 0
+    border-color: transparent $white
+    display: block
+    width: 0
+    z-index: 1
+    left: -15px
+    top: 40px
+
 #steps
   p
     font-size: 16px
@@ -297,8 +364,8 @@ i.huge
       padding: 20px 30px
 
 #footer
-  background: $white
-  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.15)
+  background: $lightWhite
+  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.1)
   color: $gray
   h4, a
     color: $gray

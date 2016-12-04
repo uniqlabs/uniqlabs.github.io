@@ -1,8 +1,11 @@
 $(document).ready(function () {
+    // Fix background cover jump on mobile (see http://stackoverflow.com/a/30200804)
+    $('#cover').css('height', window.innerHeight);
+
+    // Animate the arrow
     var a = $('.arrow');
     var nb = $('#nav');
     var st = $(this).scrollTop();
-
     if (st > 20)
         stopAnimation();
     else
@@ -11,7 +14,6 @@ $(document).ready(function () {
         nb.hide();
     else
         nb.show();
-
     $(window).scroll(function () {
         var st = $(this).scrollTop();
         if (st > 20)
@@ -24,13 +26,25 @@ $(document).ready(function () {
             nb.fadeIn();
     });
 
+    // React to clicks on the arrow
     $('#arrow').click(function (e) {
         e.preventDefault();
         scrollToElement($('#what'));
     });
 
-    $('.slides').slick({
-        infinite: true,
+    // Init the testimonial slider
+    $('#testimonial-slides').slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        dots: true,
+        appendArrows: null,
+        pauseOnDotsHover: true,
+        fade: true,
+        speed: 1000,
+        initialSlide: Math.floor(Math.random() * 3)
+    });
+    // ... and the steps slider
+    $('#step-slides').slick({
         dots: true,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -55,12 +69,14 @@ $(document).ready(function () {
         ]
     });
 
+    // Hook up the flippable cards
     $('.card').flip({
         axis: 'x',
         trigger: 'hover',
         speed: 300
     });
 
+    // Validation and signup logic
     var fni = $('#firstName');
     var ei = $('#email');
     var sb = $('#submit');
@@ -78,16 +94,6 @@ $(document).ready(function () {
         e.preventDefault();
         signUp(firstName, email)
     });
-
-    function scrollToElement(el) {
-        $('html,body').animate({scrollTop: el.offset().top}, 400);
-    }
-
-    function stopAnimation() {
-        a.stop();
-        a.hide();
-        a.removeClass('bounce');
-    }
 
     function signUp(firstName, email) {
         setBusy(true);
@@ -108,6 +114,17 @@ $(document).ready(function () {
             showAlert(false);
         };
         $.ajax(s);
+    }
+
+    // Helpers
+    function scrollToElement(el) {
+        $('html,body').animate({scrollTop: el.offset().top}, 400);
+    }
+
+    function stopAnimation() {
+        a.stop();
+        a.hide();
+        a.removeClass('bounce');
     }
 
     function setBusy(b) {
