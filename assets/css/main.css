@@ -60,32 +60,44 @@ i.huge {
 .pink {
   color: #f34444; }
 
-.bg-blue {
-  background: #00aad4; }
+.red {
+  color: #d9534f; }
+
+.green {
+  color: #5cb85c; }
+
+.bg-1 {
+  background: #8a7e76; }
+
+.bg-2 {
+  background: #6f8a91; }
 
 .bg-teal {
   background: #37c8ab; }
 
 @media (max-width: 991px) {
-  .bg-md-blue-teal {
-    background: #00aad4; } }
+  .bg-md-1-2 {
+    background: #8a7e76; } }
 @media (min-width: 992px) {
-  .bg-md-blue-teal {
-    background: #37c8ab; } }
+  .bg-md-1-2 {
+    background: #6f8a91; } }
 @media (max-width: 991px) {
-  .bg-md-teal-blue {
-    background: #37c8ab; } }
+  .bg-md-2-1 {
+    background: #6f8a91; } }
 @media (min-width: 992px) {
-  .bg-md-teal-blue {
-    background: #00aad4; } }
+  .bg-md-2-1 {
+    background: #8a7e76; } }
 /** Responsive Switches */
 @media (min-width: 576px) {
   .xs-only {
     display: none; } }
 /** Soft Breaks */
 @media (min-width: 992px) {
-  .lg-sbr {
+  .lg-sbr, .lg-only-sbr {
     display: block; } }
+@media (min-width: 1199px) {
+  .lg-only-sbr {
+    display: none; } }
 /** Flexbox */
 .hbox {
   display: flex; }
@@ -119,6 +131,9 @@ i.huge {
 
 .pb20 {
   padding-bottom: 20px; }
+
+.pb40 {
+  padding-bottom: 40px; }
 
 .p4 {
   padding: 4px; }
@@ -209,6 +224,13 @@ i.huge {
 #what {
   background: #f9f9f9; }
 
+#alertRow {
+  display: none; }
+
+.help-block {
+  padding-left: 5px;
+  font-size: 12px; }
+
 #steps p {
   font-size: 16px; }
 #steps .step {
@@ -228,7 +250,9 @@ i.huge {
   margin: 0 -15px; }
 
 #features {
-  background: #f9f9f9; }
+  background: url("../img/uniq_cover_02.jpg") center center;
+  background-size: cover;
+  color: #fff; }
   #features h3 {
     font-family: "Arimo", sans-serif;
     font-size: 34px;
@@ -236,14 +260,13 @@ i.huge {
   #features p {
     font-size: 16px; }
   #features .card {
-    color: #fff;
     height: 100%; }
     #features .card .front, #features .card .back {
       padding: 20px 30px; }
 
 #footer {
-  background: #333;
-  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.15);
   color: #808080; }
   #footer h4, #footer a {
     color: #808080;
