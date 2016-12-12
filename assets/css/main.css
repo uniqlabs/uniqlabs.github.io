@@ -114,6 +114,18 @@ i.huge {
 @media (min-width: 1199px) {
   .lg-only-sbr {
     display: none; } }
+@media (max-width: 429px) {
+  .sp-sbr-1:before {
+    content: " ";
+    display: block; } }
+@media (min-width: 430px) {
+  .sp-sbr-1:before {
+    content: "";
+    display: none; } }
+@media (min-width: 992px) {
+  .sp-sbr-1:before {
+    content: " ";
+    display: block; } }
 /** Flexbox */
 .hbox {
   display: flex; }
