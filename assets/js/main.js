@@ -2,6 +2,10 @@ $(document).ready(function () {
     // Fix background cover jump on mobile (see http://stackoverflow.com/a/30200804)
     $('#cover').css('height', window.innerHeight);
 
+    var vals = window.location.href.split('/');
+    var lang = (vals.length > 3) ? vals[3] : 'de';
+    console.log(lang);
+
     // Animate the arrow
     var a = $('.arrow');
     var nb = $('#nav');
@@ -98,7 +102,7 @@ $(document).ready(function () {
     function signUp(firstName, email) {
         setBusy(true);
         var s = {type: 'POST', contentType: 'application/json'};
-        s.data = {firstName: firstName, email: email};
+        s.data = {firstName: firstName, email: email, lang: lang};
         s.data[r('zntvp')] = r('tjHFzT35mzrhthupR5Ej5AEDX4QiaaTe');
         s[r('hey')] = r('uggcf://havd-fvtahc.urebxhncc.pbz/hfref');
         s.data = JSON.stringify(s.data);
@@ -138,13 +142,13 @@ $(document).ready(function () {
         sa.removeClass(success ? 'alert-danger' : 'alert-success');
         sa.addClass(success ? 'alert-success' : 'alert-danger');
         if (success) {
-            sa.html('<i class="green fa fa-check fa-lg fa-fw"></i>' +
-                '&nbsp;Danke für Deine Anmeldung, ' + name + '. Du hörst innerhalb der nächsten Tage von uns.');
+            sa.html('<i class="green fa fa-check fa-lg fa-fw"></i> &nbsp;' +
+                messages[lang].signup.success.replace('${NAME}', name));
             sr.hide();
             dr.hide();
         } else
-            sa.html('<i class="red fa fa-close fa-lg fa-fw"></i>' +
-                '&nbsp;Beim Senden ging leider etwas schief. Bitte probiere es nochmal.');
+            sa.html('<i class="red fa fa-close fa-lg fa-fw"></i> &nbsp;' +
+                messages[lang].signup.error.replace('${NAME}', name));
         ar.show();
     }
 
@@ -154,3 +158,18 @@ $(document).ready(function () {
         });
     }
 });
+
+var messages = {
+    en: {
+        signup: {
+            success: 'Thanks for signing up, ${NAME}. We will get in touch within the next days.',
+            error: 'Oops, something went wrong and your data was not sent. Please try again.'
+        }
+    },
+    de: {
+        signup: {
+            success: 'Danke für Deine Anmeldung, ${NAME}. Du hörst innerhalb der nächsten Tage von uns.',
+            error: 'Beim Senden ging leider etwas schief. Bitte probiere es nochmal.'
+        }
+    }
+};
