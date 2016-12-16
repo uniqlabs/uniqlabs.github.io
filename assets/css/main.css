@@ -363,7 +363,13 @@ i.huge {
     color: #808080;
     font-size: 14px;
     display: inline-block; }
-  #footer a:hover {
+  #footer .lang a {
     color: #aaa; }
+    #footer .lang a span.flag-icon {
+      opacity: 0.5; }
+  #footer .lang a:hover, #footer .lang a.active {
+    color: #1a1a1a; }
+    #footer .lang a:hover span.flag-icon, #footer .lang a.active span.flag-icon {
+      opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */
