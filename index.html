@@ -20,8 +20,8 @@
 </head>
 <body>
 <script>
-    var lang = navigator.language || navigator.browserLanguage;
-    if (lang === 'en')
+    var lang = navigator.language || navigator.userLanguage;
+    if (lang.indexOf('en') == 0)
         window.location = '/en/';
     else
         window.location = '/de/';
