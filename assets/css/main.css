@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Fonts */
 @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
@@ -48,6 +49,17 @@ p {
 p.disclaimer {
   color: #aaa;
   font-size: 14px; }
+
+ul.feature-list {
+  color: #aaa;
+  font-size: 14px;
+  margin-left: 24px;
+  list-style: none; }
+  ul.feature-list li:before {
+    font-family: "FontAwesome";
+    content: "";
+    color: #5cb85c;
+    margin: 0 8px 0 -15px; }
 
 .btn {
   font-family: "Arimo", sans-serif;
@@ -221,7 +233,7 @@ i.huge {
 #cover {
   height: 100vh;
   width: 100%;
-  background: url("../img/uniq_cover_04.jpg") center center;
+  background: url("../img/uniq_cover_02.jpg") center center;
   background-size: cover; }
   #cover .claim {
     color: #fff;
@@ -341,7 +353,7 @@ i.huge {
   margin: 0 -15px; }
 
 #features {
-  background: url("../img/uniq_cover_02.jpg") center center;
+  background: url("../img/uniq_cover_05.jpg") center center;
   background-size: cover;
   color: #fff; }
   #features h3 {
