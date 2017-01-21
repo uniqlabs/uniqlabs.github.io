@@ -4,7 +4,6 @@ $(document).ready(function () {
 
     var vals = window.location.href.split('/');
     var lang = (vals.length > 3) ? vals[3] : 'de';
-    console.log(lang);
 
     // Animate the arrow
     var a = $('.arrow');
