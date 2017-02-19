@@ -9,22 +9,21 @@ $headingFont: 'Arimo', sans-serif
 /** Color Defs **/
 $white: #fff
 $lightWhite: #f9f9f9
-$silver: #aaa
+$lightGray: #e8e8e8
+$silver: #ddd
 $gray: #808080
 $darkGray: #333
 $dark: #1a1a1a
 $black: #000
-$beige: #e0d3ca
-$pink: #f34444
-$red: #d9534f
-$lightBlue: #00c6ec
-$aqua: #00ccff
-$blue: #007dff
-$teal: #37c8ab
 $green: #5cb85c
+$teal: #30bda3
+$lightBlue: #26b7d4
+$darkBlue: #087ea6
+$raspberry: #e04e5e
+$brightRed: #fc535a
+$darkYellow: #eeb024
+$lightYellow: #fae250
 
-$c1: #8a7e76
-$c2: #6f8a91
 
 /* General */
 *
@@ -40,6 +39,7 @@ a
 
 a:hover
   text-decoration: none
+  color: $raspberry
 
 img
   text-decoration: none
@@ -56,7 +56,7 @@ html, body
 body
   position: relative
 
-h1, h2, h3, h4
+h1, h2, h3, h4, h5
   font-family: $headingFont
 
 h1
@@ -65,23 +65,12 @@ h1
 h2
   font-size: 36px
 
+h5
+  font-size: 16px
+  color: $lightBlue
+
 p
   font-size: 18px
-
-p.disclaimer
-  color: $silver
-  font-size: 14px
-
-ul.feature-list
-  color: $silver
-  font-size: 14px
-  margin-left: 24px
-  list-style: none
-  li:before
-    font-family: 'FontAwesome'
-    content: '\f00c'
-    color: $green
-    margin: 0 8px 0 -15px
 
 .btn
   font-family: $headingFont
@@ -92,6 +81,24 @@ span.rv
   unicode-bidi: bidi-override
   direction: rtl
 
+.full-width
+  width: 100%
+
+.full-height
+  height: 100%
+
+.upper
+  text-transform: uppercase
+
+.bg-slant-gray
+  background: url('../img/bg_slant_bl_gray_2.svg') bottom left no-repeat
+  background-size: 100vw auto
+
+.half-cover
+  width: 100%
+  height: 60vh
+  color: $white
+
 /** Sizes **/
 i.medium
   font-size: 32px
@@ -100,12 +107,6 @@ i.huge
   font-size: 72px
 
 /** Colors **/
-.pink
-  color: $pink
-
-.red
-  color: $red
-
 .green
   color: $green
 
@@ -115,28 +116,6 @@ i.huge
 
 .bg-teal
   background: $teal
-
-.bg-1
-  background: $c1
-
-.bg-2
-  background: $c2
-
-@media (max-width: 991px)
-  .bg-md-1-2
-    background: $c1
-
-@media (min-width: 992px)
-  .bg-md-1-2
-    background: $c2
-
-@media (max-width: 991px)
-  .bg-md-2-1
-    background: $c2
-
-@media (min-width: 992px)
-  .bg-md-2-1
-    background: $c1
 
 /** Responsive Switches **/
 @media (min-width: 576px)
@@ -184,6 +163,7 @@ i.huge
 
 .flex-center
   align-items: center
+  justify-content: center
 
 .flex-center-center
   align-items: center
@@ -208,8 +188,20 @@ i.huge
 .mb10
   margin-bottom: 10px
 
+.mb20
+  margin-bottom: 20px
+
+.mb30
+  margin-bottom: 30px
+
+.pt10
+  padding-top: 10px
+
 .pt20
   padding-top: 20px
+
+.pt60
+  padding-top: 60px
 
 .pb20
   padding-bottom: 20px
@@ -217,8 +209,19 @@ i.huge
 .pb40
   padding-bottom: 40px
 
-.p4
-  padding: 4px
+.pb80
+  padding-bottom: 80px
+
+.p5
+  padding: 5px
+
+.hp20
+  padding-left: 20px
+  padding-right: 20px
+
+.hp40
+  padding-left: 30px
+  padding-right: 30px
 
 @media (min-width: 992px)
   .lg-pdr5
@@ -245,6 +248,13 @@ i.huge
     padding-left: 25px
 
 /** Alignment **/
+.text-left-md-right
+  text-align: left
+
+@media (min-width: 768px)
+  .text-left-md-right
+    text-align: right
+
 .text-center-md-left
   text-align: center
 
@@ -259,71 +269,83 @@ i.huge
   .text-center-md-right
     text-align: right
 
+@media (min-width: 768px)
+  .text-md-center
+    text-align: center
+
+
+
+/** Visibility **/
+@media (max-width: 767px)
+  .hidden-sm-down
+    display: none
+
+@media (min-width: 768px)
+  .hidden-md-up
+    display: none
+
 /** Navbar **/
 .navbar
   background: transparent
   border: none
   a.navbar-brand
-    padding-top: 4px
+    padding-top: 12px
 
 .navbar.main
   height: 96px
   background: transparent url('../img/navbar_bg.png') repeat-x 0 0
 
+.navbar-default .navbar-nav > li > a
+  font-family: $headingFont
+  font-size: 13px
+  font-weight: 700
+  margin-top: 24px
+  padding: 6px 16px
+  color: $lightWhite
+  text-transform: uppercase
+
+.navbar-default .navbar-nav > li > a:focus
+  color: $lightWhite
+
+.navbar-default .navbar-nav > li > a:hover
+  color: $silver
+
+.navbar-default .navbar-nav > li > a.btn-basic
+  font-size: 12px
+  margin-left: 20px
+  border: 1px solid $lightWhite
+
+.navbar-default .navbar-nav > li > a.btn-basic:hover
+  background: $white
+  color: $dark
+
 /** Cover **/
-#cover
-  height: 100vh
+.full-cover
   width: 100%
-  background: url('../img/uniq_cover_04.jpg') center center
-  background-size: cover
+  height: calc(100vh + 20px)
+  background: url('../img/bg_slant_bl_white.svg') bottom left no-repeat, url('../img/uniq_cover_03.jpg') bottom right no-repeat
+  background-size: 100vw auto, cover
   .claim
     color: $white
     font-weight: 400
-    margin-bottom: 88px
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3)
 
-@media (max-width: 576px)
-  h1.claim
-    font-size: 32px
+.what
+  background: $white
+  background-size: 100vw auto
 
-.arrow
-  display: none
-  position: fixed
-  bottom: 0
-  left: 50%
-  margin-left: -27px
-  margin-bottom: 24px
-  width: 54px
-  height: 30px
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDcyIDQwIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgZD0iTSA2Ny4yNzY3Nyw0LjM4MDMxMTEgMzYsMzUuNjU3MDcxIDQuNzIzMjMsNC4zODAzMTExIi8+PC9zdmc+DQo=)
-  background-size: contain
-
-.bounce
-  -webkit-animation: bounce 2.5s infinite
-  animation: bounce 2.5s infinite
-
-@keyframes bounce
-  0%, 20%, 50%, 80%, 100%
-    -webkit-transform: translateY(0)
-    -moz-transform: translateY(0)
-    -ms-transform: translateY(0)
-    -o-transform: translateY(0)
-    transform: translateY(0)
-  40%
-    -webkit-transform: translateY(-8px)
-    -moz-transform: translateY(-8px)
-    -ms-transform: translateY(-8px)
-    -o-transform: translateY(-8px)
-    transform: translateY(-8px)
-  60%
-    -webkit-transform: translateY(-4px)
-    -moz-transform: translateY(-4px)
-    -ms-transform: translateY(-4px)
-    -o-transform: translateY(-4px)
-    transform: translateY(-4px)
-
-#what
-  background: $lightWhite
+.features
+  p
+    color: $dark
+    font-size: 15px
+  ul
+    color: $dark
+    font-size: 15px
+    margin-left: 8px
+    list-style: none
+    li
+      background: url('../img/checkmark_green.svg') 0 3px no-repeat
+      padding-left: 24px
 
 #alertRow
   display: none
@@ -332,104 +354,201 @@ i.huge
   padding-left: 5px
   font-size: 12px
 
-#testimonials
-  background: $beige url('../img/uniq_bg_tile.png') repeat
-  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1)
-
-.avatar
-  border: 1px solid rgba(127, 127, 127, 0.1)
-
-.bubble
-  position: relative
-  background: $white
-  padding: 0 30px 10px 30px
-  margin-bottom: 20px
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2)
+.testimonials
+  padding-top: 72px
+  padding-bottom: 48px
+  background: url('/assets/img/bg_slant_white_2.svg') top left no-repeat, url('/assets/img/bg_slant_white_3.svg') bottom left no-repeat, url('/assets/img/uniq_cover_20.jpg') no-repeat center center
+  background-size: 100vw auto, 100vw auto, cover
+  color: $white
   h2
-    padding-top: 10px
-    color: $aqua
+    margin-top: 12px
 
-@media (max-width: 991px)
-  .bubble
-    margin-top: 30px
-  .bubble:after
-    content: ''
-    position: absolute
-    border-style: solid
-    border-width: 0 20px 20px 20px
-    border-color: $white transparent
-    display: block
-    height: 0
-    z-index: 1
-    top: -15px
-    left: calc(50% - 20px)
+.how
+  h3
+    margin-top: 32px
+    color: $dark
+    font-family: $textFont
+    font-size: 18px
+  h3.last
+    margin-top: 4px
+  p
+    color: $gray
+    font-size: 16px
 
-@media (max-width: 768px)
-  .bubble
-    margin-left: 15px
-    margin-right: 15px
+@media (min-width: 768px)
+  .connector-padding
+    padding-left: 48px
+    padding-right: 42px
 
 @media (min-width: 992px)
-  .bubble:after
-    content: ''
-    position: absolute
-    border-style: solid
-    border-width: 20px 20px 20px 0
-    border-color: transparent $white
-    display: block
-    width: 0
-    z-index: 1
-    left: -15px
-    top: 40px
+  .connector-padding
+    padding-left: 78px
+    padding-right: 78px
 
-#steps
-  p
-    font-size: 16px
-  .step
-    padding: 10px
-  .btn-prev, .btn-next
-    margin: 0
-    cursor: pointer
-    opacity: 0.5
-  .btn-prev:hover, .btn-next:hover
-    opacity: 1.0
-  .btn-prev
-    background: url('../img/arrow-left-gray.svg') 10px center no-repeat
-  .btn-next
-    margin-left: -5px
-    background: url('../img/arrow-right-gray.svg') right 10px center no-repeat
-  .slick-dots
-    margin: 0 -15px
+@media (min-width: 1200px)
+  .connector-padding
+    padding-left: 110px
+    padding-right: 110px
 
-#features
-  background: url('../img/uniq_cover_05.jpg') center center
-  background-size: cover
+.faq
+  padding-top: 40px
+  padding-bottom: 60px
+  background: url('/assets/img/bg_slant_white_4.svg') top left no-repeat, url('/assets/img/bg_slant_white_3.svg') bottom left no-repeat, url('/assets/img/uniq_cover_10_d.jpg') no-repeat center center
+  background-size: 100vw auto, 100vw auto, cover
   color: $white
-  h3
-    font-family: $headingFont
-    font-size: 34px
-    font-weight: 700
   p
-    font-size: 16px
-  .card
-    height: 100%
-    .front, .back
-      padding: 20px 30px
+    color: $lightWhite
+    font-size: 15px
+  a
+    font-size: 18px
+    color: $lightBlue
+  a:hover
+    color: $white
 
-#footer
-  background: $lightWhite
-  box-shadow: inset 0 2px 2px 2px rgba(0, 0, 0, 0.1)
-  color: $gray
-  h4, a
-    color: $gray
+.good-to-know
+  background: url('../img/bg_slant_bl_gray_2.svg') bottom left no-repeat
+  background-size: 100vw auto
+  .card
+    h3
+      font-size: 28px
+      font-weight: 700
+      color: $raspberry
+    p
+      font-size: 16px
+    img
+      margin-top: 10px
+    .front
+      padding: 48px
+      border: 1px solid $silver
+    .back
+      padding: 32px
+      border: 1px solid $gray
+
+.faq-entry
+  h4
+    margin-top: 20px
+    color: $lightBlue
+    cursor: pointer
+  p
+    font-size: 15px
+
+.team-member
+  p
     font-size: 14px
-    display: inline-block
+
+.coaching-cover
+  width: 100%
+  height: calc(100vh + 20px)
+  background: url('../img/bg_slant_bl_white.svg') bottom left no-repeat, url('../img/uniq_cover_04.jpg') center center
+  background-size: 100vw auto, cover
+
+.application-box, .application
+  background: rgba(255, 255, 255, 0.9)
+  padding: 8px 16px
+  border-radius: 4px
+  h2
+    font-size: 28px
+    margin: 16px 0 24px 0
+  h4
+    color: $lightBlue
+    margin-top: 20px
+  label
+    font-size: 14px
+    font-weight: 300
+  .form-group button
+    font-family: $textFont
+    font-size: 14px
+    font-weight: 300
+    text-transform: none
+    color: $darkGray
+  .dropdown-menu > li > a
+    font-size: 14px
+    color: $darkGray
+
+.coaching-what
+  .benefit
+    p
+      font-size: 15px
+  .disclaimer
+    font-size: 14px
+    color: $gray
+
+.coaching-testimonials
+  padding-top: 72px
+  padding-bottom: 48px
+  background: url('/assets/img/bg_slant_white_4.svg') top left no-repeat, url('/assets/img/bg_slant_bl_white.svg') bottom left no-repeat, url('/assets/img/uniq_cover_22.jpg') no-repeat center center
+  background-size: 100vw auto, 100vw auto, cover
+  color: $white
+  p
+    padding-bottom: 48px
+
+.coaching-prerequisites
+  background: url('../img/bg_slant_br_gray_2.svg') bottom left no-repeat
+  background-size: 100vw auto, 100vw auto
+  ul
+    color: $dark
+    font-size: 16px
+    margin: 16px 0 0 8px
+    list-style: none
+    li
+      background: url('../img/checkmark_green.svg') 0 3px no-repeat
+      padding-left: 24px
+
+.cta
+  background: $lightWhite
+  border-bottom: 1px solid $lightGray
+  h3
+    margin-top: 2px
+
+footer
+  background: $lightWhite
   .lang
+    font-family: $headingFont
+    font-size: 14px
+    font-weight: 400
+    text-transform: uppercase
+    color: $lightBlue
+    padding-left: 5px
+  .copyright
+    float: right
+    padding-top: 6px
+    padding-left: 8px
+    font-size: 12px
+    font-weight: 300
+    color: $silver
+  h4
+    margin: 18px 0 8px 0
+    font-size: 14px
+    text-transform: uppercase
+    color: $darkGray
+  a
+    margin: 3px 0
+    font-size: 14px
+    display: block
+    color: $gray
+  .dropup
+    margin-top: 4px
+  #lang-dd
+    cursor: pointer
+  #lang-dd:hover
+    opacity: 0.85
+  .dropdown-menu > li > a
+    font-size: 15px
+    font-weight: 300
+  .dropdown-menu > li > a.active
+    font-weight: 400
+    padding: 4px 0 10px 40px
+    background: url('../img/icon_checkmark_blue.png') no-repeat 12px 3px
+    background-size: 24px 24px
+    color: $lightBlue
+
+@media (min-width: 768px)
+  footer
+    .copyright
+      display: block
+      float: none
+      margin-top: 61px
+    h4
+      margin: 8px 0 18px 0
     a
-      color: $silver
-      span.flag-icon
-        opacity: 0.5
-    a:hover, a.active
-      color: $dark
-      span.flag-icon
-        opacity: 1.0
+      margin: 6px 0

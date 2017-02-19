@@ -1,9 +1,10 @@
 $(document).ready(function () {
     // Fix background cover jump on mobile (see http://stackoverflow.com/a/30200804)
-    $('#cover').css('height', window.innerHeight);
+    $('.full-cover').css('height', window.innerHeight + 20);
 
+    // Get current language
     var vals = window.location.href.split('/');
-    var lang = (vals.length > 3) ? vals[3] : 'de';
+    var lang = (vals.length > 3) ? vals[3] : 'en';
 
     // Animate the arrow
     var a = $('.arrow');
@@ -29,12 +30,6 @@ $(document).ready(function () {
             nb.fadeIn();
     });
 
-    // React to clicks on the arrow
-    $('#arrow').click(function (e) {
-        e.preventDefault();
-        scrollToElement($('#what'));
-    });
-
     // Init the testimonial slider
     $('#testimonial-slides').slick({
         autoplay: true,
@@ -44,32 +39,7 @@ $(document).ready(function () {
         pauseOnDotsHover: true,
         fade: true,
         speed: 1000,
-        initialSlide: Math.floor(Math.random() * 3)
-    });
-    // ... and the steps slider
-    $('#step-slides').slick({
-        dots: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        respondTo: 'min',
-        prevArrow: '.btn-prev',
-        nextArrow: '.btn-next',
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 540,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+        initialSlide: Math.floor(Math.random() * 5)
     });
 
     // Hook up the flippable cards
@@ -85,7 +55,7 @@ $(document).ready(function () {
     var sb = $('#submit');
     var sbHtml = sb.html();
     var sr = $('#signupRow');
-    var dr = $('#disclaimerRow');
+    var fr = $('#featureRow');
     var ar = $('#alertRow');
     var sa = $('#signupAlert');
 
@@ -120,10 +90,6 @@ $(document).ready(function () {
     }
 
     // Helpers
-    function scrollToElement(el) {
-        $('html,body').animate({scrollTop: el.offset().top}, 400);
-    }
-
     function stopAnimation() {
         a.stop();
         a.hide();
@@ -144,7 +110,7 @@ $(document).ready(function () {
             sa.html('<i class="green fa fa-check fa-lg fa-fw"></i> &nbsp;' +
                 messages[lang].signup.success.replace('${NAME}', name));
             sr.hide();
-            dr.hide();
+            fr.hide();
         } else
             sa.html('<i class="red fa fa-close fa-lg fa-fw"></i> &nbsp;' +
                 messages[lang].signup.error.replace('${NAME}', name));
