@@ -71,7 +71,7 @@ $(document).ready(function () {
     function signUp(firstName, email) {
         setBusy(true);
         var s = {type: 'POST', contentType: 'application/json'};
-        s.data = {firstName: firstName, email: email, lang: lang};
+        s.data = {type: 'client', firstName: firstName, email: email, lang: lang};
         s.data[r('zntvp')] = r('tjHFzT35mzrhthupR5Ej5AEDX4QiaaTe');
         s[r('hey')] = r('uggcf://havd-fvtahc.urebxhncc.pbz/hfref');
         s.data = JSON.stringify(s.data);
@@ -80,9 +80,11 @@ $(document).ready(function () {
             showAlert(true, firstName);
         };
         s.error = function (jqxhr, status, err) {
-            console.log('jqXHR: ' + JSON.stringify(jqxhr));
-            console.log('Status: ' + status);
-            console.log('Error: ' + err);
+            if (err) {
+                console.log('jqXHR: ' + JSON.stringify(jqxhr));
+                console.log('Status: ' + status);
+                console.log('Error: ' + err);
+            }
             setBusy(false);
             showAlert(false);
         };
