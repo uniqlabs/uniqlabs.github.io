@@ -104,7 +104,7 @@ $(document).ready(function () {
 var messages = {
     en: {
         apply: {
-            success: 'Thanks your application, ${NAME}. We will get in touch within the next days.',
+            success: 'Thanks for your application, ${NAME}. We will get in touch within the next days.',
             error: 'Oops, something went wrong and your data was not sent. Please try again.'
         }
     },
