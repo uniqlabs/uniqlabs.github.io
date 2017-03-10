@@ -69,31 +69,6 @@ $(document).ready(function () {
         slidesToScroll: 1
     });
 
-    // // Hook up the image testis
-    // for (var i = 1; i <= 4; i++) {
-    //     const testi = $('#testi' + i);
-    //     const icon = $('#icon' + i);
-    //     $('#tile' + i).hover(function () {
-    //         testi.fadeIn();
-    //         icon.fadeIn();
-    //     }, function () {
-    //         testi.fadeOut();
-    //         icon.fadeOut();
-    //     });
-    // }
-
-    // Init the testimonial slider
-    // $('#testimonial-slides').slick({
-    //     autoplay: true,
-    //     autoplaySpeed: 10000,
-    //     dots: true,
-    //     appendArrows: null,
-    //     pauseOnDotsHover: true,
-    //     fade: true,
-    //     speed: 1000,
-    //     initialSlide: Math.floor(Math.random() * 5)
-    // });
-
     // Hook up the flippable cards
     $('.card').flip({
         axis: 'x',
