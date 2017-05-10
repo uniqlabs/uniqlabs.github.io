@@ -470,7 +470,7 @@ label.mobile-menu {
 #alertRow {
   display: none; }
 
-.help-block .with-errors ul li {
+.help-block {
   padding-left: 5px;
   font-size: 12px; }
 
@@ -640,6 +640,9 @@ label.mobile-menu {
   .good-to-know .card .back {
     padding: 32px;
     border: 1px solid #808080; }
+
+.page ul {
+  padding-left: 40px; }
 
 .faq-entry h4 {
   margin-top: 20px;
