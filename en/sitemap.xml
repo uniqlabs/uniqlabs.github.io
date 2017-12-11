@@ -25,6 +25,9 @@
 <loc>https://www.uniq.vision/en/privacy/</loc>
 </url>
 <url>
+<loc>https://www.uniq.vision/en/team/</loc>
+</url>
+<url>
 <loc>https://www.uniq.vision/en/assets/content/2017-05_Uniq_BackendDeveloper_EN.pdf</loc>
 <lastmod>2017-12-11T11:26:31+01:00</lastmod>
 </url>
@@ -35,9 +38,5 @@
 <url>
 <loc>https://www.uniq.vision/en/base.html</loc>
 <lastmod>2017-12-11T11:26:31+01:00</lastmod>
-</url>
-<url>
-<loc>https://www.uniq.vision/en/team.html</loc>
-<lastmod>2017-12-11T11:29:36+01:00</lastmod>
 </url>
 </urlset>
